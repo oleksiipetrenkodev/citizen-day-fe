@@ -1,0 +1,47 @@
+.field {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.label {
+  color: var(--color-navy);
+  font-size: var(--font-size-meta);
+  font-weight: var(--font-weight-bold);
+}
+
+.control {
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  top: 50%;
+  left: var(--space-4);
+  width: var(--icon-size);
+  height: var(--icon-size);
+  fill: none;
+  stroke: var(--color-muted);
+  stroke-width: 2;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.input {
+  width: 100%;
+  min-height: var(--control-height);
+  padding: var(--space-3) var(--space-4) var(--space-3) var(--space-12);
+  border: var(--border-standard);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-body);
+}
+
+.input::placeholder {
+  color: var(--color-muted);
+}
+
+.input:focus-visible {
+  border-color: var(--color-navy);
+  outline: none;
+  box-shadow: var(--focus-ring);
+}

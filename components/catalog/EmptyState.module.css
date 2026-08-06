@@ -1,0 +1,31 @@
+.empty {
+  display: grid;
+  padding: var(--space-12) var(--space-6);
+  place-items: center;
+  border: var(--border-standard);
+  border-radius: var(--radius-lg);
+  background: var(--color-white);
+  text-align: center;
+}
+
+.icon {
+  width: var(--space-12);
+  height: var(--space-12);
+  fill: none;
+  stroke: var(--color-success);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+}
+
+.title {
+  margin: var(--space-4) 0 var(--space-2);
+  color: var(--color-navy);
+  font-size: var(--font-size-card-title);
+  line-height: var(--line-height-card-title);
+}
+
+.description {
+  margin: 0 0 var(--space-6);
+  color: var(--color-muted);
+}
