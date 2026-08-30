@@ -7,14 +7,15 @@ import { EmptyState } from "./EmptyState";
 import { EventCard } from "./EventCard";
 import { EventGrid } from "./EventGrid";
 import { LoadMoreButton } from "./LoadMoreButton";
-import { categoryOptions, events } from "./events";
+import { categoryOptions, type CatalogEvent } from "./events";
 import styles from "./CatalogDemo.module.css";
 
 export type CatalogDemoProps = {
+  events: CatalogEvent[];
   showHeading?: boolean;
 };
 
-export function CatalogDemo({ showHeading = true }: CatalogDemoProps) {
+export function CatalogDemo({ events, showHeading = true }: CatalogDemoProps) {
   const [category, setCategory] = useState("all");
   const [query, setQuery] = useState("");
 
@@ -25,7 +26,7 @@ export function CatalogDemo({ showHeading = true }: CatalogDemoProps) {
       const matchesQuery = !normalizedQuery || `${event.title} ${event.description}`.toLocaleLowerCase("en").includes(normalizedQuery);
       return matchesCategory && matchesQuery;
     });
-  }, [category, query]);
+  }, [events, category, query]);
 
   const resultLabel = `${filteredEvents.length} ${filteredEvents.length === 1 ? "opportunity" : "opportunities"}`;
 

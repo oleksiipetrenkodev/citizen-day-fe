@@ -1,9 +1,9 @@
 const apiBaseUrl = process.env.BACKEND_URL ?? "http://localhost:3001";
 
-export async function apiFetch(
+export async function apiFetch<T>(
   path: string,
   options?: RequestInit,
-): Promise<Response> {
+): Promise<T> {
   const url = new URL(path, `${apiBaseUrl.replace(/\/$/, "")}/`);
   const response = await fetch(url, options);
 
@@ -13,5 +13,5 @@ export async function apiFetch(
     );
   }
 
-  return response;
+  return response.json() as Promise<T>;
 }
