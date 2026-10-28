@@ -10,7 +10,10 @@ export default async function Home() {
     <main className={styles.page}>
       <nav className={styles.nav} aria-label="Main navigation">
         <Link className={styles.brand} href="/">Citizen Day</Link>
-        <Link className={styles.systemLink} href="/design-system">View the design system</Link>
+        <div className={styles.navLinks}>
+          <Link className={styles.systemLink} href="/design-system">View the design system</Link>
+          <Link className={styles.systemLink} href="/admin">Admin</Link>
+        </div>
       </nav>
       <CatalogDemo events={events} />
     </main>
